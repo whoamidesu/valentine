@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Happy Valentine's Day</title>
+</head>
+<body>
+    <div class="canvas">
+        <div class="flower" id="flower1">
+           <div class="petal petal1 f1p"></div>
+           <div class="petal petal2 f1p"></div>
+           <div class="petal petal3 f1p"></div>
+           <div class="petal petal4 f1p"></div>
+           <div class="petal petal5 f1p"></div>
+        </div>
+   
+        <div class="flower" id="flower2">
+           <div class="petal petal1 f2p"></div>
+           <div class="petal petal2 f2p"></div>
+           <div class="petal petal3 f2p"></div>
+           <div class="petal petal4 f2p"></div>
+           <div class="petal petal5 f2p"></div>
+        </div>
+     </div>
+
+    <div id="book">
+        <input type="checkbox" id="five">
+        <div id="page5" class="page">
+          <div class="front"></div>
+          <div class="back"></div>
+          <label for="five"></label>
+        </div>
+
+        <input type="checkbox" id="four4">
+        <div id="page44" class="page">
+          <div class="front"></div>
+          <div class="back">Love You ❤️</div>
+          <label for="four4"></label>
+        </div>
+
+        <input type="checkbox" id="four3">
+        <div id="page43" class="page">
+          <div class="front"></div>
+          <div class="back">Even though i'm not always there for you</div>
+          <label for="four3"></label>
+        </div>
+
+        <input type="checkbox" id="four2">
+        <div id="page42" class="page">
+          <div class="front"></div>
+          <div class="back">Thank you for being by my side</div>
+          <label for="four2"></label>
+        </div>
+        
+        <input type="checkbox" id="four">
+        <div id="page4" class="page">
+          <div class="front"></div>
+          <div class="back">Happy Valentine's Day</div>
+          <label for="four"></label>
+        </div>
+        
+        <input type="checkbox" id="three">
+        <div id="page3" class="page">
+          <div class="front"></div>
+          <div class="back">it's currently February 14th</div>
+          <label for="three"></label>
+        </div>
+        
+        <input type="checkbox" id="two">
+        <div id="page2" class="page">
+          <div class="front"></div>
+          <div class="back">i know it's not easy as it seems</div>
+          <label for="two"></label>
+        </div>
+        
+        <input type="checkbox" id="one">
+        <div id="page1" class="page">
+          <div class="front">to my beloved Boo</div>
+          <div class="back">we've been through a lot </div>
+          <label for="one"></label>
+        </div>
+
+      </div>
+      <p class="caption">klik fotonya :D</p>
+
+      <script>
+        function play() {
+          var audio = new Audio('bgmusic.mp3');
+          audio.play();
+        }
+        </script>
+      <script>
+        play();
+          // delay possible clicks until page is turned
+        document.getElementById('book').addEventListener('click', function(e) {
+        e = this
+        e.style.pointerEvents = "none"
+        setTimeout(function(){
+            e.style.pointerEvents = ""
+        }, 2000)
+        })
+      </script>
+</body>
+</html>

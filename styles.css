@@ -1,0 +1,437 @@
+.canvas{
+    display:inline;
+}
+.flower{
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    z-index:-1;
+    position:absolute;
+    top:-20%;
+}
+.petal{
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    z-index:-1;
+}
+.petal1{
+    position:relative;
+    left:-70%; top:20%;
+}
+.petal2{
+    position:relative;
+    top:-18%; left:-5%;
+}
+.petal3{
+    position:relative;
+    top:-170%; left:72%;
+}
+.petal4{
+    position:relative;
+    top:-363%; left:-30%;
+}
+.petal5{
+    position:relative;
+    top:-450%; left:53%;
+}
+
+#flower1{
+    background-color:rgb(255, 255, 255);
+    position:absolute;
+    left:8%;
+    animation-name:rain;
+    animation-duration:7s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.f1p{
+    background-color:pink;
+}
+
+#flower2{
+    background-color:rgb(0, 4, 255);
+    position:absolute;
+    left:25%;
+    animation-name:rain;
+    animation-duration:4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+    animation-delay:1.5s;
+}
+.f2p{
+    background-color:rgb(0, 204, 255);
+}
+@keyframes rain{
+    0%{transform:rotate(0deg);
+       top:-10%;
+       left: -10%
+    }
+    100%{transform:rotate(660deg);
+        top:100%;
+        left: 80%;
+        
+    }
+}
+
+#book {
+    width:50vw;
+    height:50vh;
+  /*   outline:1px solid black; */
+    position:absolute;
+    left:25vw;
+    top:25vh;
+    perspective:75vw;
+  }
+  
+  #book:before {
+    width:1%;
+    height:100%;
+    background:#222;
+    content:'';
+    position:absolute;
+    left:49%;
+    top:0;
+    box-shadow:0px 10px 10px rgba(0,0,0,.75);
+    outline:1px solid black;
+  }
+  
+  .page {
+    width:50%;
+    height:100%;
+    background:radial-gradient(circle at 0% 100%, #777, #ddd 70%);
+    outline:1px solid black;
+    box-shadow:5px 10px 10px rgba(0,0,0,.15);
+    position:absolute;
+    left:50%;
+    top:0;
+    transition:z-index .01s linear 1s, transform 2s linear;
+    transform-origin:0% 50%;
+    z-index:10;
+    cursor:pointer;
+        
+    font-family:monospace;
+    text-align:center;
+    line-height:50vh;
+  }
+  
+  /* #page5 {
+    transform-origin:-1% 50% !important;
+  } */
+  
+  .front, .back {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+      
+    font-family:monospace;
+    text-align:center;
+    line-height:50vh;
+    
+    opacity:0;
+    transition:opacity .1s linear 1s;
+  }
+  .front {
+    opacity:1;
+  }
+  .back {
+    transform:scaleX(-1);
+  }
+  
+  input {
+    visibility:hidden;
+  }
+  
+  label {
+    width:100%;
+    height:100%;
+    z-index:99;
+    position:absolute;
+    left:0;
+    top:0;
+    margin:0;
+    padding:0;
+  /*   pointer-events:none; */
+  /*   visibility:hidden; */
+  /*   background:red; */
+  }
+  
+  input:checked + .page {
+    transform:rotateY(-180deg); 
+  }
+  
+  input:checked + .page .front {
+    opacity:0;  
+  }
+  input:checked + .page .back {
+    opacity:1;  
+  }
+  
+  
+  #five:checked + .page {
+    z-index:8;
+  }
+  #four4:checked + .page {
+    z-index:7;
+  }
+  #four3:checked + .page {
+    z-index:6;
+  }
+  #four2:checked + .page {
+    z-index:5;
+  }
+  #four:checked + .page {
+    z-index:4;
+  }
+  #three:checked + .page {
+    z-index:3;
+  }
+  #two:checked + .page {
+    z-index:2;
+  }
+  #one:checked + .page {
+    z-index:1;
+  }
+  
+  body {
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    background-image: url(bg.jpg);
+    background-size: cover;
+  }
+  
+  /* interior pages styles */
+  #page1 .front {
+    font-size:2vh;
+    letter-spacing:1vh;
+    line-height:50vh;
+    font-weight:600;
+    text-align:right;
+   
+    background:radial-gradient(circle at 70% 50%, black 50%, #222 40%);
+    background-image: url(1.jpg);
+    background-size: cover;
+    color:magenta;
+    animation:cover 10s linear infinite;
+  }
+  @keyframes cover {
+    20% { color:lime }
+    40% { color:dodgerblue }
+    60% { color:gold }
+    80% { color:cyan }
+  }
+  
+  #page1 .back {
+    font-size:2vh;
+    color:white;
+    background:#222;
+    animation:a 3s linear infinite;
+  }
+  @keyframes a {
+    45% { color:white; }
+    50% { color:#222; }
+    55% { color:white; }
+  }
+  
+  #page2 .front {
+    font-size:25vh;
+    font-family:serif;
+    font-weight:900;
+    background-image: url(2.jpeg);
+    background-size: cover;
+  }
+  @keyframes L {
+    50% { color:dodgerblue; background:white; }
+  }
+  
+  #page2 .back {
+    font-size:2vh;
+    font-weight:100;
+    font-family:sans-serif;
+    background:white;
+    color:tomato;
+  }
+  
+  @keyframes p {
+    50% { text-shadow:13px 13px 0px white, 16px 16px 0px; } 
+  }
+  
+  #page3 .front {
+    background:#222;
+    color:lime;
+    font-size:2vh;
+    font-weight:900;
+    font-family:serif;
+    background-image: url(3.jpg);
+    background-size: cover;
+    overflow:hidden;
+  }
+  #page3 .front:before {
+    content:'';
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background:radial-gradient(circle, #222 40%, transparent 40%);
+    background-size:.5vh .5vh;
+    background-position:-.5vh;
+    animation:h 15s linear infinite;
+  }
+  @keyframes h {
+    100% { background-position:.5vh 0%; }
+  }
+  
+  #page3 .back {
+    background:#222;
+    color:white;
+    font-size:2vh;
+    font-weight:900;
+    font-family:serif;
+    overflow:hidden;
+  }
+  
+  @keyframes aa {
+    50% { left:5px } 
+  }
+  #page3 .back:after {
+    content:'';
+    width:100%;
+    height:20vh;
+    text-align:center;
+    position:absolute;
+    left:0;
+    bottom:-2px;
+    background:linear-gradient(to top, #222 50%, transparent);
+  }
+  
+  #page4 {
+    overflow:hidden;
+    background:white;
+    
+  }
+  #page4 .front {
+    background:gold;
+    background-image: url(4.jpg);
+    background-size: cover;
+    color:transparent;
+  }
+  
+  
+  #page4 .back {
+    height:calc(100% + 10px);
+    color:#222;
+    font-size:2vh;
+    font-weight:900;
+    font-family:serif;  
+    animation:bob 10s linear infinite;
+  }
+  
+  @keyframes bob {
+    25% { top:-10px }
+    50% { top:0px; }
+    75% { top:-10px; }
+  }
+  
+  #page42 {
+    overflow:hidden;
+    background:white;
+    
+  }
+  #page42 .front {
+    background-image: url(5.jpg);
+    background-size: cover;
+    color:transparent;
+  }
+  
+  
+  #page42 .back {
+    height:calc(100% + 10px);
+    background: #222;
+    color: #fff;
+    text-shadow:5px 0px rgba(255,0,0,.5), 10px 0px rgba(255,0,0,.4), 15px 0px rgba(255,0,0,.3), 20px 0px rgba(255,0,0,.2), 25px 0px rgba(255,0,0,.1);
+    font-size:2vh;
+    font-weight:900;
+    font-family:serif;
+    animation: linear 10s;  
+  }
+  #page43 {
+    overflow:hidden;
+    background:white;
+    
+  }
+  #page43 .front {
+    background-image: url(6.jpg);
+    background-size: cover;
+    color:transparent;
+  }
+  
+  
+  #page43 .back {
+    height:calc(100% + 10px);
+    background: #fff;
+    font-weight:900;
+    font-family:serif;
+    animation: linear 10s;  
+  }
+  
+  #page44 {
+    overflow:hidden;
+    background:white;
+    
+  }
+  #page44 .front {
+    background-image: url(8.jpg);
+    background-size: cover;
+    color:transparent;
+  }
+  
+  #page44 .back {
+    height:calc(100% + 10px);
+    background: #222;
+    color: #fff;
+    font-weight:900;
+    font-family:serif;
+    animation: linear 10s;  
+  }
+
+  #page5 .front {
+    font-size:25vh;
+    font-weight:900;
+    font-family:serif;
+    background-image: url(7.jpg);
+    background-size: cover;
+    text-shadow:24px 24px purple;
+    animation:slide 10s linear infinite;
+    }
+  
+  @keyframes slide {
+    25% { text-shadow:-24px 24px purple; }
+    50% { text-shadow:-24px -24px purple; }
+    75% { text-shadow:24px -24px purple; }
+    100% { text-shadow:24px 24px purple; }
+  }
+  
+  #page5 .back {
+    font-size:2vh;
+    letter-spacing:2vh;
+    line-height:50vh;
+    font-weight:900;
+    text-align:center;
+    background-image: url(last.jpeg);
+    background-size: cover;
+    color:magenta;
+    padding-left:2vh;
+    animation:cover 10s linear infinite;
+  }
+
+  .caption {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    text-align: center;
+  }
